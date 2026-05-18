@@ -1,0 +1,486 @@
+{
+  "nav": {
+    "services": "Servicios",
+    "team": "Equipo",
+    "contact": "Contacto",
+    "cta": "Pide tu primera cita",
+    "locale_toggle": "Català",
+    "services_menu": {
+      "logopedia": "Logopedia",
+      "psicologia": "Psicología",
+      "neuropsicologia": "Neuropsicología",
+      "psicopedagogia": "Psicopedagogia",
+      "tea": "TEA",
+      "rehabilitacion_voz": "Rehabilitación de Voz",
+      "terapia_familiar": "Terapia Familiar",
+      "habilidades_sociales": "Habilidades Sociales"
+    }
+  },
+  "footer": {
+    "tagline": "Desde 1999 ayudándote a dar un paso adelante.",
+    "services_title": "Servicios",
+    "contact_title": "Contacto",
+    "legal_title": "Legal",
+    "privacy": "Política de privacidad",
+    "legal_notice": "Aviso legal",
+    "cookies": "Política de cookies",
+    "address": "Carrer de Malgrat, 47\n08016 Barcelona",
+    "hours": "Lunes–Viernes, 9h–20h",
+    "hours_note": "Con cita previa",
+    "metro": "Metro L1, L4, L5",
+    "copyright": "© {year} ABC Centre. Todos los derechos reservados. Web por Rankova."
+  },
+  "home": {
+    "hero_badge": "Desde 1999 · Nou Barris, Barcelona",
+    "hero_h1": "Logopedia, Psicología y Neuropsicología en Barcelona",
+    "hero_subtitle": "Un equipo de 12 especialistas acompaña a niños, jóvenes y adultos en Nou Barris. 26 años de experiencia a tu lado.",
+    "hero_cta_primary": "Servicios para adultos",
+    "hero_cta_secondary": "Servicios para niños y jóvenes",
+    "hero_stat_years": "años de experiencia",
+    "hero_stat_specialists": "especialistas",
+    "hero_stat_disciplines": "disciplinas",
+    "audience_title": "Atención especializada para todas las edades",
+    "audience_subtitle": "Tanto si buscas apoyo para tu hijo como para ti mismo, tenemos el especialista adecuado.",
+    "audience_children_title": "Niños y jóvenes",
+    "audience_children_services": ["Logopedia infantil", "Psicología infantil", "TEA", "Psicopedagogia", "Habilidades sociales"],
+    "audience_children_cta": "Ver servicios para niños",
+    "audience_adults_title": "Adultos",
+    "audience_adults_services": ["Logopedia adultos", "Psicología adultos", "Neuropsicología", "Terapia familiar", "Rehabilitación de voz"],
+    "audience_adults_cta": "Ver servicios para adultos",
+    "services_title": "Nuestros servicios",
+    "services_subtitle": "Un centro multidisciplinar con todo lo que necesitas bajo un mismo techo.",
+    "why_title": "Por qué ABC Centre",
+    "why_years_title": "26 años de trayectoria",
+    "why_years_body": "Acompañando a familias y adultos desde 1999 en el corazón de Nou Barris.",
+    "why_team_title": "Equipo multidisciplinar",
+    "why_team_body": "12 especialistas en logopedia, psicología, neuropsicología y psicopedagogia.",
+    "why_personal_title": "Atención personalizada",
+    "why_personal_body": "Cada persona tiene un plan de trabajo adaptado a sus necesidades y objetivos.",
+    "why_location_title": "Centro de referencia",
+    "why_location_body": "En el corazón de Nou Barris. Accesible con metro L1, L4 y L5.",
+    "team_title": "Nuestro equipo",
+    "team_subtitle": "Profesionales especializados comprometidos con tu bienestar.",
+    "team_cta": "Conoce al equipo completo",
+    "booking_title": "Tu primera cita, en 3 pasos",
+    "booking_step1_title": "Elige el servicio",
+    "booking_step1_body": "Selecciona la especialidad que necesitas.",
+    "booking_step2_title": "Elige día y hora",
+    "booking_step2_body": "Consulta la disponibilidad real de las especialistas.",
+    "booking_step3_title": "Confirma",
+    "booking_step3_body": "Recibes la confirmación por email al instante.",
+    "booking_cta": "Pide cita ahora",
+    "map_title": "Encuéntranos",
+    "map_subtitle": "En el corazón de Nou Barris, Barcelona."
+  },
+  "common": {
+    "book_cta": "Pide tu primera consulta",
+    "book_cta_short": "Pide cita",
+    "back_services": "← Volver a servicios",
+    "children_tag": "Niños y jóvenes",
+    "adults_tag": "Adultos",
+    "all_ages_tag": "Todas las edades",
+    "online_tag": "También online",
+    "years_exp": "años de experiencia",
+    "specialists": "especialistas",
+    "whatsapp": "Escríbenos por WhatsApp",
+    "phone": "Llamar ahora",
+    "how_it_works": "¿Cómo funciona?",
+    "step1": "Primera consulta",
+    "step2": "Evaluación",
+    "step3": "Plan de trabajo",
+    "step4": "Seguimiento",
+    "our_team": "Nuestro equipo para este servicio",
+    "faq_title": "Preguntas frecuentes",
+    "book_section_title": "¿Listo para dar el primer paso?",
+    "book_section_body": "Contacta con nosotras y te ayudamos a encontrar el especialista adecuado para ti.",
+    "see_all_services": "Ver todos los servicios"
+  },
+  "services_page": {
+    "h1": "Nuestros servicios",
+    "subtitle": "Un equipo multidisciplinar especializado en logopedia, psicología, neuropsicología y psicopedagogia para niños, jóvenes y adultos.",
+    "children_section": "Para niños y jóvenes",
+    "adults_section": "Para adultos",
+    "all_section": "Para todas las edades"
+  },
+  "logopedia": {
+    "meta_title": "Logopeda en Barcelona — Infantil y Adultos | ABC Centre",
+    "meta_desc": "Logopeda especializada en niños y adultos en Nou Barris, Barcelona. Tratamos trastornos del habla, lenguaje, voz y deglución. 26 años de experiencia.",
+    "h1": "Logopeda en Barcelona — niños, adolescentes y adultos",
+    "subtitle": "Evaluación y tratamiento de trastornos del habla, lenguaje, voz y deglución en Nou Barris, Barcelona.",
+    "what_title": "¿Qué es la logopedia?",
+    "what_body": "La logopedia es la disciplina que se ocupa de la prevención, evaluación, diagnóstico y tratamiento de los trastornos de la comunicación humana y los trastornos relacionados con la deglución. En ABC Centre trabajamos con niños, adolescentes y adultos para mejorar su comunicación y calidad de vida.",
+    "children_title": "Logopedia infantil y juvenil",
+    "children_items": [
+      "Retraso del habla y del lenguaje",
+      "Dislalia (pronunciación incorrecta de fonemas)",
+      "Problemas auditivos y discriminación auditiva",
+      "Dificultades de lectura y escritura (dislexia, disgrafía)",
+      "Tartamudez y fluidez del habla",
+      "Deglución atípica y hábitos orales",
+      "Terapia miofuncional",
+      "Sistemas alternativos de comunicación (SAAC)"
+    ],
+    "adults_title": "Logopedia para adultos",
+    "adults_items": [
+      "Afasia y trastornos de articulación",
+      "Terapia miofuncional adultos",
+      "Trastornos de la voz y higiene vocal",
+      "Tartamudez y fluidez del habla",
+      "Rehabilitación tras ictus o daño cerebral",
+      "Disfagia (trastornos de la deglución)"
+    ],
+    "approach_title": "Nuestro enfoque",
+    "approach_body": "Realizamos una evaluación inicial individualizada para identificar las necesidades específicas de cada persona. A partir de ahí, diseñamos un plan de intervención personalizado con objetivos claros y medibles. Trabajamos de forma coordinada con el resto del equipo del centro cuando el caso lo requiere.",
+    "faq": [
+      {
+        "q": "¿A partir de qué edad se puede hacer logopedia?",
+        "a": "La logopedia puede empezar desde edades muy tempranas. En estimulación del lenguaje trabajamos con niños a partir de los 18 meses, y en logopedia adultos no hay límite de edad."
+      },
+      {
+        "q": "¿Cuántas sesiones necesito?",
+        "a": "Depende del tipo y la gravedad del trastorno. Tras la evaluación inicial te daremos una estimación del tratamiento necesario."
+      },
+      {
+        "q": "¿Hacéis sesiones online?",
+        "a": "Sí, ofrecemos sesiones de logopedia online para adultos en determinados casos. Consúltanos tu situación."
+      },
+      {
+        "q": "¿Trabajáis con el cole o el médico del niño?",
+        "a": "Sí. La coordinación con el entorno del niño es fundamental. Nos ponemos en contacto con el centro escolar cuando es necesario."
+      }
+    ],
+    "team_members": ["Celia Cruz", "Laia Lahoz", "Vanessa de Pedro", "Noelia Torres"]
+  },
+  "psicologia": {
+    "meta_title": "Psicólogo en Barcelona — Infantil, Juvenil y Adultos | ABC Centre",
+    "meta_desc": "Psicólogos en Nou Barris, Barcelona. Atención psicológica para niños, adolescentes y adultos. Presencial y online. 26 años de experiencia.",
+    "h1": "Psicólogo en Barcelona — infantil, juvenil y adultos",
+    "subtitle": "Apoyo psicológico especializado para niños, adolescentes y adultos en Nou Barris, Barcelona. También online.",
+    "what_title": "¿Qué es la psicología clínica?",
+    "what_body": "La psicología clínica se ocupa de la evaluación, diagnóstico y tratamiento de los problemas emocionales, conductuales y relacionales que afectan al bienestar de las personas. En ABC Centre contamos con psicólogas generales sanitarias especializadas en diferentes etapas de la vida.",
+    "children_title": "Psicología infantil y juvenil",
+    "children_items": [
+      "Trastornos del estado de ánimo y emocionales",
+      "Problemas de conducta",
+      "Dificultades relacionales y de comunicación",
+      "Ansiedad, fobias y miedos",
+      "TDAH y trastornos del neurodesarrollo",
+      "Apoyo en situaciones familiares (separación, duelo, adopción)",
+      "Crisis adolescentes",
+      "Gestión del sueño y hábitos"
+    ],
+    "adults_title": "Psicología para adultos",
+    "adults_items": [
+      "Ansiedad y estrés",
+      "Depresión y estado de ánimo bajo",
+      "Terapia de pareja",
+      "Duelo y pérdidas",
+      "Autoestima y desarrollo personal",
+      "Trastornos alimentarios",
+      "Psicología online"
+    ],
+    "approach_title": "Nuestro enfoque",
+    "approach_body": "Trabajamos desde un enfoque integrador, adaptando las técnicas a cada persona. Realizamos una primera consulta de evaluación en la que escuchamos tu situación y acordamos los objetivos del proceso terapéutico. La confidencialidad y el respeto son la base de nuestra práctica.",
+    "faq": [
+      {
+        "q": "¿Ofrecéis psicología online?",
+        "a": "Sí. Ofrecemos sesiones de psicología online para adultos y adolescentes. La plataforma es segura y confidencial."
+      },
+      {
+        "q": "¿Cuánto dura una sesión?",
+        "a": "Las sesiones tienen una duración estándar de 50 minutos. Las sesiones de evaluación inicial pueden ser algo más largas."
+      },
+      {
+        "q": "¿Necesito derivación médica?",
+        "a": "No. Puedes contactarnos directamente sin necesidad de derivación. Somos psicólogas generales sanitarias con habilitación para ejercer de forma autónoma."
+      },
+      {
+        "q": "¿Hacéis informes para el colegio o el juzgado?",
+        "a": "Sí. Podemos elaborar informes psicológicos cuando el proceso terapéutico lo requiera."
+      }
+    ],
+    "team_members": ["Laia Álvarez", "Maria Andrés", "Mª del Mar Aránega", "Margot Moreno", "Eulàlia Marquez"]
+  },
+  "neuropsicologia": {
+    "meta_title": "Neuropsicólogo en Barcelona — Evaluación y Rehabilitación | ABC Centre",
+    "meta_desc": "Neuropsicología en Barcelona. Evaluación cognitiva para niños (TDAH, dislexia) y adultos (daño cerebral, deterioro cognitivo). ABC Centre, Nou Barris.",
+    "h1": "Neuropsicólogo en Barcelona — evaluación y rehabilitación cognitiva",
+    "subtitle": "Evaluación y rehabilitación neuropsicológica para niños, adolescentes y adultos en Nou Barris, Barcelona.",
+    "what_title": "¿Qué es la neuropsicología?",
+    "what_body": "La neuropsicología estudia la relación entre el cerebro y el comportamiento. A través de una evaluación neuropsicológica podemos identificar cómo funciona la memoria, la atención, el lenguaje y otras funciones cognitivas, y diseñar un programa de rehabilitación o estimulación adaptado.",
+    "children_title": "Neuropsicología infantil y juvenil",
+    "children_items": [
+      "Evaluación de capacidades cognitivas y áreas de aprendizaje",
+      "Diagnóstico de TDAH",
+      "Trastornos de aprendizaje (dislexia, discalculia)",
+      "Trastornos del desarrollo intelectual",
+      "Trastornos del aprendizaje no verbal",
+      "Trastornos del lenguaje y la comunicación"
+    ],
+    "adults_title": "Neuropsicología para adultos",
+    "adults_items": [
+      "Evaluación tras daño cerebral adquirido (ictus, TCE)",
+      "Detección y seguimiento de deterioro cognitivo",
+      "Evaluación de sospecha de demencia",
+      "Estimulación cognitiva",
+      "Rehabilitación neuropsicológica"
+    ],
+    "approach_title": "Nuestro enfoque",
+    "approach_body": "La evaluación neuropsicológica utiliza pruebas estandarizadas y validadas para obtener un perfil cognitivo detallado. Con los resultados elaboramos un informe y un plan de intervención que puede incluir rehabilitación cognitiva, orientación a la familia y coordinación con otros profesionales.",
+    "faq": [
+      {
+        "q": "¿Qué diferencia hay entre psicología y neuropsicología?",
+        "a": "La neuropsicología se enfoca específicamente en la relación entre el cerebro y las funciones cognitivas (memoria, atención, lenguaje). Se centra en evaluar y rehabilitar estas funciones cuando hay una afectación neurológica o del neurodesarrollo."
+      },
+      {
+        "q": "¿Cuánto dura una evaluación neuropsicológica?",
+        "a": "La evaluación completa puede requerir entre 2 y 4 sesiones según la complejidad del caso. Incluye entrevista, pruebas y elaboración del informe."
+      },
+      {
+        "q": "¿Podéis hacer el diagnóstico de TDAH?",
+        "a": "Realizamos la evaluación neuropsicológica que forma parte del proceso diagnóstico del TDAH. El diagnóstico final requiere coordinación con el neuropediatra o psiquiatra."
+      }
+    ],
+    "team_members": ["Laia Álvarez", "Silvia Marcó", "Sara Reyes"]
+  },
+  "psicopedagogia": {
+    "meta_title": "Psicopedagoga en Barcelona — Dificultades de Aprendizaje | ABC Centre",
+    "meta_desc": "Psicopedagogia en Nou Barris, Barcelona. Apoyo educativo para niños con dislexia, TDAH y dificultades de aprendizaje. ABC Centre.",
+    "h1": "Psicopedagogo en Barcelona — dislexia, TDAH y dificultades de aprendizaje",
+    "subtitle": "Evaluación y apoyo educativo para niños y jóvenes con dificultades de aprendizaje en Nou Barris, Barcelona.",
+    "what_title": "¿Qué es la psicopedagogia?",
+    "what_body": "La psicopedagogia se encarga de estudiar el aprendizaje humano y sus dificultades. El psicopedagogo evalúa el rendimiento académico, los procesos de aprendizaje y los factores emocionales y cognitivos que pueden estar influyendo, y diseña estrategias de intervención personalizadas.",
+    "children_title": "¿Para quién es?",
+    "children_items": [
+      "Niños con dificultades de lectura y escritura (dislexia, disgrafía)",
+      "Dificultades en matemáticas (discalculia)",
+      "TDAH con afectación escolar",
+      "Bajo rendimiento académico sin causa aparente",
+      "Niños con altas capacidades con necesidades específicas",
+      "Preparación para pruebas diagnósticas"
+    ],
+    "adults_title": "Coordinación con el entorno escolar",
+    "adults_items": [
+      "Informe psicopedagógico para el centro educativo",
+      "Orientación a familias y tutores",
+      "Coordinación con el EAP (Equip d'Assessorament Psicopedagògic)",
+      "Adaptaciones curriculares"
+    ],
+    "approach_title": "Nuestro enfoque",
+    "approach_body": "Realizamos una evaluación psicopedagógica completa que incluye análisis del rendimiento académico, las capacidades cognitivas y los factores emocionales. A partir del informe, diseñamos un plan de intervención que puede combinarse con apoyo logopédico o psicológico cuando sea necesario.",
+    "faq": [
+      {
+        "q": "¿A qué edad se puede detectar la dislexia?",
+        "a": "Los primeros signos pueden detectarse a partir de los 5-6 años, cuando el niño empieza a aprender a leer. La evaluación formal suele realizarse a partir de los 7 años."
+      },
+      {
+        "q": "¿Qué diferencia hay entre psicopedagogia y logopedia?",
+        "a": "La logopedia se centra en los trastornos del habla y el lenguaje, mientras que la psicopedagogia trabaja los procesos de aprendizaje y el rendimiento académico. A menudo trabajan de forma complementaria."
+      }
+    ],
+    "team_members": ["Carla López"]
+  },
+  "tea": {
+    "meta_title": "Logopedia y Psicología para TEA en Barcelona | ABC Centre",
+    "meta_desc": "Intervención especializada en Trastorno del Espectro Autista en Barcelona. Logopedia, psicología y habilidades sociales para niños con TEA. Nou Barris.",
+    "h1": "Logopedia y Psicología para TEA en Barcelona",
+    "subtitle": "Intervención integral y especializada para personas con TEA y sus familias en Nou Barris, Barcelona.",
+    "what_title": "¿Qué es el TEA?",
+    "what_body": "El Trastorno del Espectro Autista (TEA) es un conjunto de condiciones del neurodesarrollo que afectan a la comunicación, la interacción social y el comportamiento. En ABC Centre ofrecemos una intervención integral que trabaja de forma coordinada desde la logopedia, la psicología y las habilidades sociales.",
+    "children_title": "Áreas de intervención",
+    "children_items": [
+      "Diagnóstico y evaluación del TEA",
+      "Logopedia y comunicación (verbal y no verbal)",
+      "Sistemas Aumentativos y Alternativos de Comunicación (SAAC)",
+      "Habilidades sociales (individual y en grupo)",
+      "Estimulación cognitiva (atención, funciones ejecutivas, memoria)",
+      "Reconocimiento y expresión de emociones",
+      "Manejo de la rigidez y la inflexibilidad",
+      "Intervención en sensibilidad sensorial",
+      "Apoyo psicológico al niño y a la familia"
+    ],
+    "adults_title": "Orientación a familias",
+    "adults_items": [
+      "Sesiones de orientación parental",
+      "Estrategias para el hogar",
+      "Coordinación con el centro escolar",
+      "Gestión de situaciones difíciles"
+    ],
+    "approach_title": "Nuestro enfoque",
+    "approach_body": "Creemos en la intervención temprana y en un abordaje individualizado que tenga en cuenta las fortalezas y necesidades únicas de cada persona. El trabajo en equipo entre logopedas y psicólogas nos permite ofrecer una atención integral y coordinada.",
+    "faq": [
+      {
+        "q": "¿A partir de qué edad atendéis casos de TEA?",
+        "a": "Trabajamos con niños a partir de los 18 meses en casos de sospecha o diagnóstico temprano. La intervención precoz es clave para mejorar el pronóstico."
+      },
+      {
+        "q": "¿Hacéis diagnóstico de TEA?",
+        "a": "Realizamos la evaluación logopédica y psicológica que forma parte del proceso diagnóstico. El diagnóstico final requiere un equipo multidisciplinar que puede incluir neuropediatra."
+      },
+      {
+        "q": "¿Tenéis grupos de habilidades sociales para TEA?",
+        "a": "Sí. Organizamos grupos de habilidades sociales para niños con TEA en función de la edad y nivel de desarrollo."
+      }
+    ],
+    "team_members": ["Celia Cruz", "Laia Álvarez", "Laia Lahoz", "Vanessa de Pedro"]
+  },
+  "rehabilitacion_voz": {
+    "meta_title": "Rehabilitación de Voz en Barcelona — Logopeda | ABC Centre",
+    "meta_desc": "Rehabilitación de la voz en Barcelona. Tratamiento de disfonías, nódulos, parálisis vocal y trastornos vocales. Logopeda especializada. Nou Barris.",
+    "h1": "Rehabilitación de Voz en Barcelona",
+    "subtitle": "Tratamiento especializado de trastornos de la voz y rehabilitación vocal para profesionales y público general.",
+    "what_title": "¿Qué es la rehabilitación de voz?",
+    "what_body": "La rehabilitación de voz es la intervención logopédica dirigida a tratar los trastornos que afectan a la producción y calidad de la voz. Trabajamos con personas que presentan disfonías funcionales u orgánicas, profesionales de la voz y pacientes derivados por ORL.",
+    "children_title": "¿Para quién es?",
+    "children_items": [
+      "Disfonía funcional (tensión, abuso vocal)",
+      "Nódulos, pólipos y quistes en las cuerdas vocales (post-cirugía)",
+      "Parálisis de cuerdas vocales",
+      "Voz profesional (cantantes, docentes, actores)",
+      "Rehabilitación post-laringectomía",
+      "Feminización/masculinización de la voz (personas trans)",
+      "Higiene vocal y prevención"
+    ],
+    "adults_title": "Coordinación con ORL",
+    "adults_items": [
+      "Trabajo coordinado con otorrinolaringólogos",
+      "Informe logopédico para el especialista médico",
+      "Seguimiento post-quirúrgico"
+    ],
+    "approach_title": "Nuestro enfoque",
+    "approach_body": "Realizamos una evaluación vocal completa que incluye historia clínica, análisis perceptivo y, cuando es posible, análisis acústico de la voz. A partir de los resultados diseñamos un programa de rehabilitación que trabaja la técnica vocal, la higiene y los factores que mantienen el trastorno.",
+    "faq": [
+      {
+        "q": "¿Necesito derivación del ORL?",
+        "a": "No es imprescindible, pero en los casos de patología orgánica (nódulos, pólipos, parálisis) es recomendable la coordinación con el especialista ORL."
+      },
+      {
+        "q": "¿Cuántas sesiones necesita la rehabilitación vocal?",
+        "a": "Depende del tipo de trastorno. Una disfonía funcional leve puede resolverse en 8-12 sesiones. Los casos de patología orgánica pueden requerir más tiempo."
+      },
+      {
+        "q": "¿Trabajáis con cantantes y profesores?",
+        "a": "Sí. Tenemos experiencia trabajando con profesionales de la voz y adaptamos el tratamiento a las demandas vocales específicas de cada perfil."
+      }
+    ],
+    "team_members": ["Celia Cruz", "Laia Lahoz", "Noelia Torres"]
+  },
+  "terapia_familiar": {
+    "meta_title": "Terapia Familiar y de Pareja en Barcelona | ABC Centre",
+    "meta_desc": "Terapia familiar y de pareja en Nou Barris, Barcelona. Mejora la comunicación y resuelve conflictos con ayuda profesional. ABC Centre.",
+    "h1": "Terapia Familiar y de Pareja en Barcelona",
+    "subtitle": "Acompañamiento profesional para mejorar la comunicación y resolver conflictos en el entorno familiar y de pareja.",
+    "what_title": "¿Qué es la terapia familiar?",
+    "what_body": "La terapia familiar y de pareja es una modalidad de intervención psicológica que trabaja con el sistema familiar como unidad. El objetivo es mejorar la comunicación, resolver conflictos y encontrar nuevas formas de relacionarse que favorezcan el bienestar de todos los miembros.",
+    "children_title": "¿Para quién es?",
+    "children_items": [
+      "Parejas con dificultades de comunicación",
+      "Conflictos de pareja y crisis relacionales",
+      "Familias en proceso de separación o divorcio",
+      "Familias con hijos con dificultades emocionales o conductuales",
+      "Situaciones de duelo o pérdida en el sistema familiar",
+      "Familias reconstituidas",
+      "Adopción y acogimiento"
+    ],
+    "adults_title": "Modalidades",
+    "adults_items": [
+      "Terapia de pareja",
+      "Terapia familiar con hijos",
+      "Orientación parental",
+      "Mediación familiar"
+    ],
+    "approach_title": "Nuestro enfoque",
+    "approach_body": "Trabajamos desde un enfoque sistémico y relacional, entendiendo que los problemas individuales siempre tienen un contexto familiar. Las sesiones son un espacio seguro para que todos los miembros puedan expresarse y ser escuchados.",
+    "faq": [
+      {
+        "q": "¿Tienen que venir todos los miembros de la familia?",
+        "a": "En la primera sesión es ideal que vengan las personas directamente implicadas. A partir de ahí, el terapeuta orientará sobre el formato más adecuado."
+      },
+      {
+        "q": "¿La terapia de pareja es para salvar la relación?",
+        "a": "No necesariamente. La terapia de pareja puede ayudar tanto a mejorar la relación como a tomar decisiones de forma más consciente, incluyendo la separación."
+      }
+    ],
+    "team_members": ["Maria Andrés", "Mª del Mar Aránega", "Margot Moreno"]
+  },
+  "habilidades_sociales": {
+    "meta_title": "Habilidades Sociales Niños y Adolescentes Barcelona | ABC Centre",
+    "meta_desc": "Grupos de habilidades sociales para niños y adolescentes en Barcelona. Mejora la comunicación y las relaciones. ABC Centre, Nou Barris.",
+    "h1": "Habilidades Sociales en Barcelona",
+    "subtitle": "Grupos terapéuticos para niños y adolescentes que quieren mejorar sus relaciones sociales y su comunicación.",
+    "what_title": "¿Qué son las habilidades sociales?",
+    "what_body": "Las habilidades sociales son el conjunto de conductas y capacidades que nos permiten relacionarnos con los demás de manera efectiva y satisfactoria. En ABC Centre trabajamos estas habilidades en formato grupal, lo que permite practicarlas en un entorno seguro y con iguales.",
+    "children_title": "¿Para quién son los grupos?",
+    "children_items": [
+      "Niños y adolescentes con dificultades para hacer amigos",
+      "Personas con timidez o ansiedad social",
+      "Niños con TEA (grupos específicos)",
+      "Adolescentes con baja autoestima",
+      "Personas con TDAH que afecta a las relaciones",
+      "Niños con dificultades de comunicación"
+    ],
+    "adults_title": "¿Qué trabajamos en los grupos?",
+    "adults_items": [
+      "Comunicación verbal y no verbal",
+      "Escucha activa y empatía",
+      "Resolución de conflictos",
+      "Asertividad",
+      "Trabajo en equipo",
+      "Autoconocimiento y autoestima"
+    ],
+    "approach_title": "Nuestro enfoque",
+    "approach_body": "Los grupos se forman por franjas de edad para que el trabajo sea lo más significativo posible. Cada grupo cuenta con un máximo de 6-8 participantes para garantizar la atención individualizada. Las sesiones combinan dinámicas, juegos y reflexiones.",
+    "faq": [
+      {
+        "q": "¿Qué edad tienen que tener para participar?",
+        "a": "Trabajamos con niños desde los 6 años y adolescentes hasta los 18. Los grupos se organizan por franjas de edad."
+      },
+      {
+        "q": "¿Cuántas personas hay en cada grupo?",
+        "a": "Los grupos tienen un máximo de 6-8 participantes para garantizar la atención y el trabajo individualizado."
+      },
+      {
+        "q": "¿Cuándo empiezan los nuevos grupos?",
+        "a": "Los grupos nuevos empiezan en septiembre y en enero. Contáctanos para informarte de las plazas disponibles."
+      }
+    ],
+    "team_members": ["Maria Andrés", "Silvia Marcó", "Sara Reyes"]
+  },
+  "equipo": {
+    "meta_title": "Nuestro Equipo — ABC Centre Barcelona",
+    "meta_desc": "Conoce al equipo de especialistas de ABC Centre: logopedas, psicólogas y neuropsicólogas con años de experiencia en Nou Barris, Barcelona.",
+    "h1": "Nuestro equipo",
+    "subtitle": "12 especialistas en logopedia, psicología y neuropsicología comprometidas con tu bienestar.",
+    "intro": "En ABC Centre creemos que el éxito del proceso terapéutico se basa en la confianza, la profesionalidad y el trato humano. Por eso contamos con un equipo multidisciplinar que trabaja de forma coordinada para ofrecerte la mejor atención.",
+    "directors_title": "Codirectoras",
+    "team_title": "Equipo de especialistas",
+    "disciplines_title": "Nuestras disciplinas"
+  },
+  "contacto": {
+    "meta_title": "Contacto y Primera Cita — ABC Centre Barcelona",
+    "meta_desc": "Contacta con ABC Centre en Nou Barris, Barcelona. Pide tu primera cita en logopedia, psicología o neuropsicología. Tel: 93 243 48 35.",
+    "h1": "Contacto y primera cita",
+    "subtitle": "Estamos aquí para ayudarte. Contáctanos por el canal que prefieras.",
+    "form_title": "Pide tu primera consulta",
+    "form_name": "Nombre",
+    "form_name_patient": "Nombre del paciente",
+    "form_age": "Edad del paciente",
+    "form_guardian": "Nombre del familiar (si es menor)",
+    "form_email": "Correo electrónico",
+    "form_phone": "Teléfono",
+    "form_service": "Servicio",
+    "form_service_placeholder": "¿Qué servicio necesitas?",
+    "form_message": "Cuéntanos brevemente el motivo de consulta",
+    "form_privacy": "He leído y acepto la {link}",
+    "form_privacy_link": "política de privacidad",
+    "form_submit": "Enviar consulta",
+    "form_success": "¡Gracias! Te contactaremos en las próximas 24 horas.",
+    "form_error": "Ha habido un error. Por favor, llámanos directamente.",
+    "calendar_title": "O elige directamente tu cita",
+    "calendar_coming_soon": "El sistema de reservas online estará disponible próximamente. Mientras tanto, contáctanos por teléfono o WhatsApp.",
+    "info_title": "Información de contacto",
+    "map_title": "Cómo llegar",
+    "map_metro": "Metro: L1 (Trinitat Nova), L4 (Via Júlia), L5 (Virrei Amat)",
+    "map_bus": "Bus: 11, 50, 76, 97"
+  }
+}

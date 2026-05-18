@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-teal: #246978;
+    --color-lime: #CFD357;
+    --color-cream: #F5F3EF;
+    --color-ink: #2C2C2C;
+    --color-gray: #6D6E71;
+  }
+
+  html {
+    font-family: 'Outfit', system-ui, sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #F5F3EF;
+    color: #2C2C2C;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-weight: 600;
+  }
+
+  p, li, span {
+    font-weight: 300;
+  }
+
+  *:focus-visible {
+    outline: 2px solid #246978;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-6 py-3 bg-teal text-white font-outfit font-semibold text-sm rounded-xl
+           hover:bg-teal-dark transition-all duration-200 hover:shadow-card hover:-translate-y-0.5
+           focus-visible:ring-2 focus-visible:ring-teal focus-visible:ring-offset-2;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 px-6 py-3 bg-transparent text-teal font-outfit font-semibold text-sm
+           border-2 border-teal rounded-xl hover:bg-teal hover:text-white transition-all duration-200;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 px-4 py-2 text-teal font-outfit font-semibold text-sm
+           hover:underline transition-all duration-200;
+  }
+
+  .section-label {
+    @apply text-xs font-semibold tracking-widest uppercase text-teal mb-2;
+  }
+
+  .section-title {
+    @apply text-h2 font-outfit font-semibold text-ink leading-tight mb-4;
+  }
+
+  .section-subtitle {
+    @apply text-base font-outfit font-light text-ink-mid leading-relaxed max-w-2xl;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl p-6 shadow-card hover:shadow-card-hover transition-all duration-300;
+  }
+
+  .tag {
+    @apply inline-flex items-center px-3 py-1 text-xs font-semibold rounded-full bg-teal/10 text-teal;
+  }
+
+  .tag-lime {
+    @apply inline-flex items-center px-3 py-1 text-xs font-semibold rounded-full bg-lime/30 text-ink;
+  }
+
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Prevent fixed navbar from overlapping hash-target sections */
+:target {
+  scroll-margin-top: 5rem;
+}
+
+/* Input / select shared base style — avoid opacity modifiers in @apply */
+.field-base {
+  @apply w-full px-4 py-3 bg-cream rounded-xl text-sm font-light text-ink
+         focus:outline-none focus:border-teal focus:ring-1 focus:ring-teal transition-colors duration-150;
+  border: 1px solid rgba(109, 110, 113, 0.2);
+}
+.field-base::placeholder {
+  color: rgba(109, 110, 113, 0.5);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-on-scroll {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
