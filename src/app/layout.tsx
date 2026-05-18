@@ -28,7 +28,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap"
           rel="stylesheet"
         />
-        <link rel="icon" href="/logos/logo-round.png" type="image/png" />
+        <link rel="icon" href="/logos/ABC-sin-servicios-transparente.png" type="image/png" />
       </head>
       <body>{children}</body>
     </html>

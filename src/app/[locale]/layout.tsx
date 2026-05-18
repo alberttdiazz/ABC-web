@@ -6,6 +6,8 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ScrollAnimator from '@/components/ScrollAnimator';
 import FloatingCTA from '@/components/FloatingCTA';
+import LoadingScreen from '@/components/LoadingScreen';
+import ScrollProgress from '@/components/ScrollProgress';
 import type { Metadata } from 'next';
 
 type Props = { params: Promise<{ locale: string }> };
@@ -43,6 +45,8 @@ export default async function LocaleLayout({
 
   return (
     <NextIntlClientProvider locale={locale} messages={messages}>
+      <LoadingScreen />
+      <ScrollProgress />
       <Navbar />
       <main id="main-content" className="pb-16 lg:pb-0">{children}</main>
       <Footer />

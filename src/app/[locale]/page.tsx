@@ -3,6 +3,11 @@ import { getTranslations } from 'next-intl/server';
 import Image from 'next/image';
 import { Link } from '@/i18n/navigation';
 import type { Metadata } from 'next';
+import type { ReactNode } from 'react';
+import {
+  MessageCircle, Brain, Activity, BookOpen, Sparkles,
+  Mic, Users, Handshake, Calendar, Heart, MapPin,
+} from 'lucide-react';
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -15,15 +20,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-const SERVICES = [
-  { key: 'logopedia',           href: '/logopedia' as const,           icon: '🗣️', color: 'border-teal' },
-  { key: 'psicologia',          href: '/psicologia' as const,          icon: '🧠', color: 'border-teal' },
-  { key: 'neuropsicologia',     href: '/neuropsicologia' as const,     icon: '⚡', color: 'border-lime' },
-  { key: 'psicopedagogia',      href: '/psicopedagogia' as const,      icon: '📚', color: 'border-teal' },
-  { key: 'tea',                 href: '/tea' as const,                 icon: '🌟', color: 'border-lime' },
-  { key: 'rehabilitacion_voz',  href: '/rehabilitacion-voz' as const,  icon: '🎙️', color: 'border-teal' },
-  { key: 'terapia_familiar',    href: '/terapia-familiar' as const,    icon: '👨‍👩‍👧', color: 'border-lime' },
-  { key: 'habilidades_sociales', href: '/habilidades-sociales' as const, icon: '🤝', color: 'border-teal' },
+const SERVICES: { key: string; href: '/logopedia' | '/psicologia' | '/neuropsicologia' | '/psicopedagogia' | '/tea' | '/rehabilitacion-voz' | '/terapia-familiar' | '/habilidades-sociales'; icon: ReactNode; color: string }[] = [
+  { key: 'logopedia',            href: '/logopedia',            icon: <MessageCircle className="w-6 h-6" />, color: 'border-teal' },
+  { key: 'psicologia',           href: '/psicologia',           icon: <Brain className="w-6 h-6" />,         color: 'border-teal' },
+  { key: 'neuropsicologia',      href: '/neuropsicologia',      icon: <Activity className="w-6 h-6" />,      color: 'border-lime' },
+  { key: 'psicopedagogia',       href: '/psicopedagogia',       icon: <BookOpen className="w-6 h-6" />,      color: 'border-teal' },
+  { key: 'tea',                  href: '/tea',                  icon: <Sparkles className="w-6 h-6" />,      color: 'border-lime' },
+  { key: 'rehabilitacion_voz',   href: '/rehabilitacion-voz',   icon: <Mic className="w-6 h-6" />,           color: 'border-teal' },
+  { key: 'terapia_familiar',     href: '/terapia-familiar',     icon: <Users className="w-6 h-6" />,         color: 'border-lime' },
+  { key: 'habilidades_sociales', href: '/habilidades-sociales', icon: <Handshake className="w-6 h-6" />,     color: 'border-teal' },
 ];
 
 const TEAM = [
@@ -216,7 +221,7 @@ export default function HomePage() {
                 className={`animate-on-scroll card group flex flex-col gap-3 border-t-4 ${service.color} hover:-translate-y-1`}
                 style={{ animationDelay: `${i * 60}ms` }}
               >
-                <span className="text-2xl">{service.icon}</span>
+                <span className="text-teal">{service.icon}</span>
                 <span className="font-outfit font-semibold text-sm text-ink group-hover:text-teal transition-colors">
                   {tNav(`services_menu.${service.key}`)}
                 </span>
@@ -236,13 +241,13 @@ export default function HomePage() {
               <h2 className="section-title">Más de dos décadas<br />al lado de las familias</h2>
               <div className="space-y-6 mt-8">
                 {[
-                  { title: t('why_years_title'),    body: t('why_years_body'),    icon: '📅' },
-                  { title: t('why_team_title'),     body: t('why_team_body'),     icon: '👥' },
-                  { title: t('why_personal_title'), body: t('why_personal_body'), icon: '💙' },
-                  { title: t('why_location_title'), body: t('why_location_body'), icon: '📍' },
+                  { title: t('why_years_title'),    body: t('why_years_body'),    icon: <Calendar className="w-5 h-5" /> },
+                  { title: t('why_team_title'),     body: t('why_team_body'),     icon: <Users className="w-5 h-5" /> },
+                  { title: t('why_personal_title'), body: t('why_personal_body'), icon: <Heart className="w-5 h-5" /> },
+                  { title: t('why_location_title'), body: t('why_location_body'), icon: <MapPin className="w-5 h-5" /> },
                 ].map((item) => (
                   <div key={item.title} className="flex gap-4">
-                    <span className="text-2xl flex-shrink-0 mt-0.5">{item.icon}</span>
+                    <span className="text-teal flex-shrink-0 mt-0.5">{item.icon}</span>
                     <div>
                       <h3 className="font-outfit font-semibold text-ink mb-1">{item.title}</h3>
                       <p className="text-sm font-light text-gray leading-relaxed">{item.body}</p>
