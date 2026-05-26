@@ -1,13 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { createBooking } from '@/lib/google-calendar';
+import { createBooking, getLeadSpecialist } from '@/lib/google-calendar';
 import { sendPatientConfirmation, sendInternalNotification } from '@/lib/gmail';
 import type { BookingRequest } from '@/lib/google-calendar';
-import type { Service } from '@/config/specialists';
+import type { Service, SpecialistId } from '@/config/specialists';
+import { SPECIALISTS, SERVICE_TEAM } from '@/config/specialists';
 
-const VALID_SERVICES = new Set<Service>([
-  'logopedia', 'psicologia', 'neuropsicologia', 'psicopedagogia',
-  'tea', 'rehabilitacion-voz', 'terapia-familiar', 'habilidades-sociales',
-]);
+const VALID_SERVICES = new Set<Service>(Object.keys(SERVICE_TEAM) as Service[]);
 
 export async function POST(req: NextRequest) {
   try {
@@ -30,15 +28,23 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Franja horaria no válida' }, { status: 400 });
     }
 
+    // ── Resolve specialist ────────────────────────────────────────────────────
+    const specialistIdRaw = body.specialistId as string | undefined;
+    const specialistId: SpecialistId =
+      specialistIdRaw && specialistIdRaw in SPECIALISTS
+        ? (specialistIdRaw as SpecialistId)
+        : getLeadSpecialist(service as Service);
+
     // ── Build typed request ───────────────────────────────────────────────────
     const bookingRequest: BookingRequest = {
-      service: service as Service,
-      patientName: String(patientName).trim(),
-      patientAge: body.patientAge ?? undefined,
+      service:      service as Service,
+      specialistId,
+      patientName:  String(patientName).trim(),
+      patientAge:   body.patientAge ?? undefined,
       guardianName: body.guardianName?.trim() || undefined,
-      email: String(email).trim().toLowerCase(),
-      phone: String(phone).trim(),
-      message: body.message?.trim() || undefined,
+      email:        String(email).trim().toLowerCase(),
+      phone:        String(phone).trim(),
+      message:      body.message?.trim() || undefined,
       selectedSlot,
     };
 
@@ -53,13 +59,17 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // ── Send emails (non-blocking — failures are logged but don't abort) ──────
+    // ── Send emails (non-blocking) ────────────────────────────────────────────
     await Promise.allSettled([
       sendPatientConfirmation(bookingRequest),
       sendInternalNotification(bookingRequest),
     ]);
 
-    return NextResponse.json({ success: true, eventId: result.eventId });
+    return NextResponse.json({
+      success: true,
+      eventId: result.eventId,
+      specialist: SPECIALISTS[specialistId].name,
+    });
   } catch (err) {
     console.error('[Appointment API Error]', err);
     return NextResponse.json({ error: 'Error interno del servidor' }, { status: 500 });

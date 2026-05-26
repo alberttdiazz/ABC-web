@@ -1,25 +1,26 @@
-import { SERVICE_SPECIALISTS } from '@/config/specialists';
-import type { Service } from '@/config/specialists';
+import { resolveCalendarId, SPECIALISTS, SERVICE_TEAM, getLeadSpecialistId } from '@/config/specialists';
+import type { Service, SpecialistId } from '@/config/specialists';
 
-// Re-export Service so existing imports from this file keep working
+// Re-export types used by other files
 export type { Service } from '@/config/specialists';
 
 // ─── Shared types ────────────────────────────────────────────────────────────
 
 export interface TimeSlot {
   start: string; // ISO 8601 with timezone offset
-  end: string;
+  end:   string;
   available: boolean;
 }
 
 export interface BookingRequest {
-  service: Service;
-  patientName: string;
-  patientAge?: number | string;
+  service:      Service;
+  specialistId: SpecialistId;
+  patientName:  string;
+  patientAge?:  number | string;
   guardianName?: string;
-  email: string;
-  phone: string;
-  message?: string;
+  email:        string;
+  phone:        string;
+  message?:     string;
   selectedSlot: TimeSlot;
 }
 
@@ -33,11 +34,7 @@ export interface BookingResult {
 
 const TZ = 'Europe/Madrid';
 
-/**
- * Work hours: slot start times (hour in 24h format).
- * Each session is 50 minutes; 10-minute gap before next hour.
- * Client may adjust once final schedule is confirmed.
- */
+/** Slot start hours (24h). Each session = 50 min; 10-min gap. */
 const SLOT_HOURS = [9, 10, 11, 12, 13, 16, 17, 18, 19] as const;
 
 // ─── Auth helpers ─────────────────────────────────────────────────────────────
@@ -51,7 +48,6 @@ function hasCredentials(): boolean {
 
 function getPrivateKey(): string {
   const raw = process.env.GOOGLE_PRIVATE_KEY ?? '';
-  // Support both escaped (\n) and literal newlines in .env
   return raw.replace(/\\n/g, '\n');
 }
 
@@ -66,7 +62,6 @@ async function getCalendarAuth() {
 
 // ─── Timezone helpers ─────────────────────────────────────────────────────────
 
-/** Returns the UTC offset string for Europe/Madrid on a given date, e.g. "+02:00" */
 function getMadridOffsetStr(date: Date): string {
   const parts = new Intl.DateTimeFormat('en', {
     timeZone: TZ,
@@ -80,19 +75,14 @@ function getMadridOffsetStr(date: Date): string {
   return `${sign}${h.padStart(2, '0')}:${m ?? '00'}`;
 }
 
-/**
- * Builds an ISO datetime string anchored to Europe/Madrid local time.
- * e.g. buildMadridISO("2025-06-15", 9, 0) → "2025-06-15T09:00:00+02:00"
- */
 function buildMadridISO(dateStr: string, hour: number, minute = 0): string {
-  const ref = new Date(`${dateStr}T12:00:00Z`); // noon UTC to get correct DST offset
+  const ref = new Date(`${dateStr}T12:00:00Z`);
   const offset = getMadridOffsetStr(ref);
   const hh = String(hour).padStart(2, '0');
   const mm = String(minute).padStart(2, '0');
   return `${dateStr}T${hh}:${mm}:00${offset}`;
 }
 
-/** Extracts YYYY-MM-DD in Europe/Madrid timezone from a Date object */
 function toMadridDateStr(date: Date): string {
   return new Intl.DateTimeFormat('en-CA', {
     timeZone: TZ,
@@ -107,24 +97,20 @@ function toMadridDateStr(date: Date): string {
 function generateCandidateSlots(dateStr: string): TimeSlot[] {
   return SLOT_HOURS.map((hour) => ({
     start: buildMadridISO(dateStr, hour, 0),
-    end: buildMadridISO(dateStr, hour, 50),
+    end:   buildMadridISO(dateStr, hour, 50),
     available: true,
   }));
 }
 
-interface BusyPeriod {
-  start: string;
-  end: string;
-}
+interface BusyPeriod { start: string; end: string }
 
 function markAvailability(candidates: TimeSlot[], busy: BusyPeriod[]): TimeSlot[] {
   return candidates.map((slot) => {
     const slotStart = new Date(slot.start).getTime();
-    const slotEnd = new Date(slot.end).getTime();
+    const slotEnd   = new Date(slot.end).getTime();
     const isBusy = busy.some((b) => {
       const busyStart = new Date(b.start).getTime();
-      const busyEnd = new Date(b.end).getTime();
-      // Overlap: slot starts before busy ends AND slot ends after busy starts
+      const busyEnd   = new Date(b.end).getTime();
       return slotStart < busyEnd && slotEnd > busyStart;
     });
     return { ...slot, available: !isBusy };
@@ -134,20 +120,21 @@ function markAvailability(candidates: TimeSlot[], busy: BusyPeriod[]): TimeSlot[
 // ─── Public API ───────────────────────────────────────────────────────────────
 
 /**
- * Returns time slots for a given service and date.
- * Falls back to mock data when credentials are not configured.
+ * Returns time slots for a given specialist and date.
+ * Falls back to mock data when credentials or calendarId are not configured.
  */
 export async function getAvailableSlots(
-  service: Service,
+  specialistId: SpecialistId,
   dateFrom: Date,
   _dateTo: Date
 ): Promise<TimeSlot[]> {
-  if (!hasCredentials()) {
+  const calendarId = resolveCalendarId(specialistId);
+
+  if (!hasCredentials() || !calendarId) {
     return getMockSlots(dateFrom);
   }
 
   const dateStr = toMadridDateStr(dateFrom);
-  const specialist = SERVICE_SPECIALISTS[service];
   const candidates = generateCandidateSlots(dateStr);
 
   try {
@@ -156,40 +143,37 @@ export async function getAvailableSlots(
     const calendar = google.calendar({ version: 'v3', auth });
 
     const dayStart = buildMadridISO(dateStr, 0, 0);
-    const dayEnd = buildMadridISO(dateStr, 23, 59);
+    const dayEnd   = buildMadridISO(dateStr, 23, 59);
 
     const freebusyRes = await calendar.freebusy.query({
       requestBody: {
         timeMin: dayStart,
         timeMax: dayEnd,
         timeZone: TZ,
-        items: [{ id: specialist.calendarId }],
+        items: [{ id: calendarId }],
       },
     });
 
-    const busy =
-      freebusyRes.data.calendars?.[specialist.calendarId]?.busy ?? [];
-
+    const busy = freebusyRes.data.calendars?.[calendarId]?.busy ?? [];
     return markAvailability(candidates, busy as BusyPeriod[]);
   } catch (err) {
     console.error('[GoogleCalendar] getAvailableSlots error:', err);
-    // On API error return candidates all-available so the UI is not broken
-    return candidates;
+    return candidates; // return all-available on error so UI isn't broken
   }
 }
 
 /**
- * Creates a calendar event for the confirmed booking.
- * Falls back to console-only logging when credentials are not configured.
+ * Creates a Google Calendar event for the confirmed booking.
  */
 export async function createBooking(request: BookingRequest): Promise<BookingResult> {
-  if (!hasCredentials()) {
-    console.warn('[GoogleCalendar] No credentials — booking logged to console only');
+  const specialist = SPECIALISTS[request.specialistId];
+  const calendarId = resolveCalendarId(request.specialistId);
+
+  if (!hasCredentials() || !calendarId) {
+    console.warn('[GoogleCalendar] No credentials/calendarId — booking logged to console only');
     console.log('[BookingRequest]', JSON.stringify(request, null, 2));
     return { success: true, eventId: 'mock-event-id' };
   }
-
-  const specialist = SERVICE_SPECIALISTS[request.service];
 
   try {
     const auth = await getCalendarAuth();
@@ -197,13 +181,13 @@ export async function createBooking(request: BookingRequest): Promise<BookingRes
     const calendar = google.calendar({ version: 'v3', auth });
 
     const event = await calendar.events.insert({
-      calendarId: specialist.calendarId,
-      sendUpdates: 'all', // sends Google Calendar notification to attendees
+      calendarId,
+      sendUpdates: 'all',
       requestBody: {
         summary: `Primera consulta — ${request.patientName}`,
-        description: buildEventDescription(request, specialist.displayName),
+        description: buildEventDescription(request, specialist.name, specialist.role),
         start: { dateTime: request.selectedSlot.start, timeZone: TZ },
-        end: { dateTime: request.selectedSlot.end, timeZone: TZ },
+        end:   { dateTime: request.selectedSlot.end,   timeZone: TZ },
         attendees: [
           { email: request.email },
           { email: specialist.email },
@@ -225,11 +209,23 @@ export async function createBooking(request: BookingRequest): Promise<BookingRes
   }
 }
 
+/**
+ * Returns the lead specialist ID for a service (first in the team list).
+ * Useful when no specific specialist has been selected.
+ */
+export function getLeadSpecialist(service: Service): SpecialistId {
+  return getLeadSpecialistId(service);
+}
+
 // ─── Internal helpers ─────────────────────────────────────────────────────────
 
-function buildEventDescription(request: BookingRequest, specialistName: string): string {
+function buildEventDescription(
+  request: BookingRequest,
+  specialistName: string,
+  specialistRole: string
+): string {
   const lines = [
-    `NUEVA CITA — ${specialistName}`,
+    `NUEVA CITA — ${specialistName} (${specialistRole})`,
     '',
     `Paciente: ${request.patientName}${request.patientAge ? `, ${request.patientAge} años` : ''}`,
     request.guardianName ? `Familiar: ${request.guardianName}` : null,
@@ -244,7 +240,6 @@ function buildEventDescription(request: BookingRequest, specialistName: string):
   return lines.filter(Boolean).join('\n');
 }
 
-/** Mock slots for development (no credentials required) */
 function getMockSlots(from: Date): TimeSlot[] {
   const slots: TimeSlot[] = [];
   const d = new Date(from);
@@ -257,7 +252,7 @@ function getMockSlots(from: Date): TimeSlot[] {
       for (const hour of SLOT_HOURS) {
         slots.push({
           start: buildMadridISO(dateStr, hour, 0),
-          end: buildMadridISO(dateStr, hour, 50),
+          end:   buildMadridISO(dateStr, hour, 50),
           available: Math.random() > 0.3,
         });
       }

@@ -11,7 +11,7 @@
  */
 
 import type { BookingRequest } from '@/lib/google-calendar';
-import { SERVICE_SPECIALISTS } from '@/config/specialists';
+import { SPECIALISTS } from '@/config/specialists';
 
 const TZ = 'Europe/Madrid';
 
@@ -68,7 +68,7 @@ function buildRawMessage(opts: {
  * Sends a booking confirmation email to the patient.
  */
 export async function sendPatientConfirmation(request: BookingRequest): Promise<void> {
-  const specialist = SERVICE_SPECIALISTS[request.service];
+  const specialist = SPECIALISTS[request.specialistId];
   const from = process.env.GMAIL_SENDER_EMAIL ?? 'noreply@abccentre.es';
 
   if (!hasGmailCredentials()) {
@@ -77,7 +77,7 @@ export async function sendPatientConfirmation(request: BookingRequest): Promise<
     return;
   }
 
-  const html = buildPatientEmailHtml(request, specialist.displayName);
+  const html = buildPatientEmailHtml(request, specialist.name);
 
   try {
     const auth = await getGmailAuth();
@@ -107,7 +107,7 @@ export async function sendPatientConfirmation(request: BookingRequest): Promise<
  * Sends an internal notification to the reception / specialist team.
  */
 export async function sendInternalNotification(request: BookingRequest): Promise<void> {
-  const specialist = SERVICE_SPECIALISTS[request.service];
+  const specialist = SPECIALISTS[request.specialistId];
   const from = process.env.GMAIL_SENDER_EMAIL ?? 'noreply@abccentre.es';
   const internalRecipient = process.env.GMAIL_INTERNAL_RECIPIENT ?? 'citas@abccentre.es';
 
@@ -116,7 +116,7 @@ export async function sendInternalNotification(request: BookingRequest): Promise
     return;
   }
 
-  const html = buildInternalEmailHtml(request, specialist.displayName);
+  const html = buildInternalEmailHtml(request, specialist.name);
 
   try {
     const auth = await getGmailAuth();
@@ -129,7 +129,7 @@ export async function sendInternalNotification(request: BookingRequest): Promise
         raw: buildRawMessage({
           from,
           to: internalRecipient,
-          subject: `Nueva cita: ${request.patientName} — ${specialist.displayName}`,
+          subject: `Nueva cita: ${request.patientName} — ${specialist.name}`,
           html,
         }),
       },

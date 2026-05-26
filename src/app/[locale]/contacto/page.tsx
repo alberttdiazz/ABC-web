@@ -35,12 +35,11 @@ export default function ContactoPage() {
                 <BookingForm />
               </div>
 
-              {/* Google Calendar placeholder */}
-              <div className="mt-8 p-6 bg-cream rounded-2xl border border-teal/20">
-                <h3 className="font-outfit font-semibold text-ink mb-2">{t('calendar_title')}</h3>
-                <p className="text-sm font-light text-gray mb-4">{t('calendar_coming_soon')}</p>
-                {/* TODO: Embed Google Calendar booking widget here when credentials are ready */}
-                {/* <iframe src="https://calendar.google.com/calendar/appointments/..." /> */}
+              {/* Alternative contact */}
+              <div className="mt-8 p-5 bg-cream rounded-2xl border border-gray/15">
+                <p className="text-xs font-semibold text-gray uppercase tracking-wider mb-3">
+                  ¿Prefieres contactar directamente?
+                </p>
                 <div className="flex gap-3">
                   <a
                     href="tel:+34932434835"
